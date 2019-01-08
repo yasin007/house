@@ -12,6 +12,12 @@
         <!-- 事务超时时间 -->
         <setting name="defaultStatementTimeout" value="600"/>
     </settings>
-    
+    <typeAliases>
+        <typeAlias type="com.yangyi.house.common.User" alias="user"/>
+    </typeAliases>
+
+    <mappers>
+        <mapper resource="/mapper/user.xml"/>
+    </mappers>
 
 </configuration>
