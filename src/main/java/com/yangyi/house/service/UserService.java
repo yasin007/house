@@ -1,23 +1,21 @@
 package com.yangyi.house.service;
 
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
+import com.yangyi.house.serverResponse.ServerResponse;
+import com.yangyi.house.common.User;
 import org.springframework.stereotype.Service;
 
-import com.yangyi.house.common.User;
-import com.yangyi.house.mapper.UserMapper;
-
-@Service
-public class UserService {
+public interface UserService {
 
 
-    @Autowired
-    private UserMapper userMapper;
+    /**
+     * 注册service注册
+     *
+     * @param user
+     * @return
+     */
+    ServerResponse<String> register(User user);
 
-    public List<User> getUsers() {
-        return userMapper.selectUsers();
-    }
+    String enable(String key);
 
 }
 
